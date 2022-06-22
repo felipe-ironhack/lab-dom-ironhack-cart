@@ -40,6 +40,7 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
+  console.log()
   const target = event.currentTarget;
 
   const parent = target.parentNode.parentNode;
@@ -64,8 +65,10 @@ function createProduct() {
     return
   }
 
-  const newProduct = `
-  <tr class="product">
+  let newProduct = document.createElement('tr')
+  newProduct.className = 'product'
+
+  newProduct.innerHTML = `
   <td class="name">
     <span>${nameValue}</span>
   </td>
@@ -77,17 +80,16 @@ function createProduct() {
   <td class="action">
     <button class="btn btn-remove">Remove</button>
   </td>
-  </tr>
   `;
 
   const tbodyElement = document.querySelector('#cart tbody')
 
-  tbodyElement.innerHTML += newProduct
+  tbodyElement.appendChild(newProduct)
 
-  const removeBtns = document.getElementsByClassName('btn-remove');
-  for (let button of removeBtns) {
-    button.addEventListener('click', removeProduct);
-  }
+  const removeBtn = newProduct.querySelector('.btn-remove');
+  removeBtn.addEventListener('click', removeProduct)
+
+  console.log(removeBtn)
 
   nameInput.value = ''
   priceInput.value = 0
