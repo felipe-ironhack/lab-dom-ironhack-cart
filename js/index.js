@@ -57,7 +57,7 @@ function createProduct() {
   const nameInput = document.querySelector('.create-product input');
   let nameValue = nameInput.value;
 
-  const priceInput = document.querySelector('.create-product input[type=number');
+  const priceInput = document.querySelector('.create-product input[type=number]');
   let priceValue = priceInput.valueAsNumber;
 
   if (nameValue === '' || priceValue === 0){
@@ -88,8 +88,6 @@ function createProduct() {
 
   const removeBtn = newProduct.querySelector('.btn-remove');
   removeBtn.addEventListener('click', removeProduct)
-
-  console.log(removeBtn)
 
   nameInput.value = ''
   priceInput.value = 0
