@@ -1,5 +1,4 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
   const price = product.querySelector('.price span');
 
@@ -69,17 +68,17 @@ function createProduct() {
   newProduct.className = 'product'
 
   newProduct.innerHTML = `
-  <td class="name">
-    <span>${nameValue}</span>
-  </td>
-  <td class="price">$<span>${priceValue}</span></td>
-  <td class="quantity">
-    <input type="number" value="0" min="0" placeholder="Quantity" />
-  </td>
-  <td class="subtotal">$<span>0</span></td>
-  <td class="action">
-    <button class="btn btn-remove">Remove</button>
-  </td>
+    <td class="name">
+      <span>${nameValue}</span>
+    </td>
+    <td class="price">$<span>${priceValue}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>
   `;
 
   const tbodyElement = document.querySelector('#cart tbody')
@@ -105,6 +104,4 @@ window.addEventListener('load', () => {
 
   const createBtn = document.getElementById('create');
   createBtn.addEventListener('click', createProduct);
-
-  //... your code goes here
 });
