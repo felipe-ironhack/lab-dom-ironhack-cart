@@ -1,5 +1,4 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
 
   const price = product.querySelector('.price span').innerHTML
@@ -62,10 +61,10 @@ function removeProduct(event) {
 // ITERATION 5
 function createProduct() {
   const nameInput = document.querySelector('.create-product input')
-  let nameValue = nameInput.value
+  const nameValue = nameInput.value
 
   const priceInput = document.querySelector('.create-product input[type=number]')
-  let priceValue = priceInput.valueAsNumber
+  const priceValue = priceInput.valueAsNumber
 
   if (nameValue === '' || !priceValue ) {
     window.alert('You should add the information')
@@ -102,14 +101,22 @@ function createProduct() {
 }
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+  // const calculatePricesBtn = document.getElementById('calculate');
+  // calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const removeBtns = [...document.getElementsByClassName('btn-remove')]
-  removeBtns.forEach(button => button.addEventListener('click', removeProduct))
+  // const removeBtns = [...document.getElementsByClassName('btn-remove')]
+  // removeBtns.forEach(button => button.addEventListener('click', removeProduct))
 
-  const createBtn = document.getElementById('create')
-  createBtn.addEventListener('click', createProduct)
+  // const createBtn = document.getElementById('create')
+  // createBtn.addEventListener('click', createProduct)
 
-  //... your code goes here
+  const buttons = [...document.getElementsByClassName('btn')]
+  buttons.forEach(button => {
+    if (button.id === 'create') button.addEventListener('click', createProduct)
+
+    if (button.id === 'calculate') button.addEventListener('click', calculateAll)
+
+    if ([...button.classList].includes('btn-remove')) button.addEventListener('click', removeProduct)    
+  })
+
 });
