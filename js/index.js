@@ -116,7 +116,7 @@ window.addEventListener('load', () => {
 
     if (button.id === 'calculate') button.addEventListener('click', calculateAll)
 
-    if ([...button.classList].includes('btn-remove')) button.addEventListener('click', removeProduct)    
+    if (button.className.includes('btn-remove')) button.addEventListener('click', removeProduct)    
   })
 
 });
